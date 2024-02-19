@@ -1,0 +1,54 @@
+<form #dataForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="containter-fluid">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="text-capitalize">Document</h4>
+            </div>
+            <div class="card-body">
+                <div class="row mb-2">
+                    <div class="col">
+                        <div class="form-group">
+                            <input [(ngModel)]="data.title" type="text" name="title" id="title" class="form-control form-control-lg" required autofocus placeholder="Document Title">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col">
+                        <div class="form-group">
+                            <input [(ngModel)]="data.subTitle" type="text" name="subTitle" id="subTitle" class="form-control form-control-lg" required autofocus placeholder="Sub Title">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col">
+                        <div class="form-group">
+                            <select [(ngModel)]="data.category" name="gender" id="gender" class="form-select form-select-lg">
+                                <option *ngFor="let g of dataService.items | async; let i = index" value="{{g.name}}">
+                                    {{g.name}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col">
+                        <div class="form-group">
+                            <textarea [(ngModel)]="data.text" type="" name="noteText" id="noteText" class="form-control form-control-lg" cols="30" rows="10" placeholder="Type text here" required>
+
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="submit" class="btn btn-primary"
+                            [disabled]="!dataForm.form.valid">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

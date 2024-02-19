@@ -1,0 +1,42 @@
+<div class="">
+    <div class="container">
+        <div class="breadcrumb_text">
+            <h2>Project Categories</h2>
+            <p>Categories allow for document segmentation.</p>
+        </div>
+    </div>
+</div>
+<section class="typography_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <form #dataForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="data">
+                    <div class="containter-fluid wow fadeInLeft mb-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="text-capitalize">Category Name</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="dataName">Name</label>
+                                            <input [(ngModel)]="data.name" type="text" name="dataName" id="dataName" class="form-control form-control-lg" required autofocus>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <button type="submit" class="btn btn-primary" [disabled]="!dataForm.form.valid">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <app-category-list (id)="onEdit($event)"></app-category-list>
+            </div>
+        </div>
+    </div>
+</section>
+{{data | json}}

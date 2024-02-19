@@ -1,0 +1,39 @@
+
+<div class="card" *ngIf="((dataService.items | async)?.length != 0) else nodata">
+    <div class="card-body">
+        <div class="card-header d-flex justify-content-between">
+            <span>Categories</span>
+            <span style="cursor: pointer;" class="text-primary" (click)="onNew()">Create</span>
+        </div>
+        <div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="wow fadeInUp">#</th>
+                        <th class="wow fadeInUp">Value</th>
+                        <th class="wow fadeInUp"><i class="fa fa-trash" aria-hidden="true"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of dataService.items | async ; let i = index" class="wow fadeInUp">
+                        <td style="cursor: pointer;" (click)="onEdit(data)">{{data?._id}}</td>
+                        <td style="cursor: pointer;" (click)="onEdit(data)" class="text-capitalize">{{data?.name}}</td>
+                        <td (click)="onDelete(data)" style="cursor: pointer;" class="text-danger"><i class="fa fa-trash" aria-hidden="true"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<ng-template #nodata>
+    <section class="typography_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <div class="alert alert-warning text-center" role="alert"> No Categories found. Click to <span style="cursor: pointer;" class="text-primary" (click)="onNew()">Create</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</ng-template>

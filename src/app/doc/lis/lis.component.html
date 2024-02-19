@@ -1,0 +1,38 @@
+
+
+<div class="card" *ngIf="((dataService.items | async)?.length != 0) else nodata">
+    <div class="card-header no-print">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-filter"></i></span>
+            <input [(ngModel)]="filteredData" type="text" class="form-control" placeholder="Type to filter listing" aria-label="contactName" aria-describedby="basic-addon1">
+        </div>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <th> # </th>
+                <th> Title </th>
+                <th> Category </th>
+                <th> Text </th>
+                <th> Updated </th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of dataService.items | async | docFilter:filteredData; let i = index" [ngClass]="{'text-muted' : !data.active}">
+                    <td>{{i+1}}</td>
+                    <td style="cursor: pointer;" (click)="onView(data)">{{data?.title}}</td>
+                    <td style="cursor: pointer;" (click)="onView(data)">{{data?.category}}</td>
+                    <td style="cursor: pointer;" (click)="onView(data)"><div [innerHTML]="(data?.text | slice : 0 : 30)"></div> </td>
+                    <td style="cursor: pointer;" (click)="onView(data)">{{data?.updated_at | date: 'medium'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<ng-template #nodata>
+    <div class="alert alert-info text-center" role="alert">
+        <p>&nbsp;</p>
+        <h4>No documents found</h4>
+
+        <p>&nbsp;</p>
+    </div>
+</ng-template>

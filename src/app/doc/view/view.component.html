@@ -1,0 +1,56 @@
+<div class="container-fluid mt-3">
+      <div class="row">
+            <div class="col-md">
+                  <h1 class="h1 bold">
+                        <span *ngIf="data && data.title"> {{data.title}}</span>
+                        <span class="text-muted" *ngIf="data && !data.title">No Title</span>
+                  </h1>
+                  <h3 class="h3 bold">
+                        <span *ngIf="data && data.subTitle"> {{data.subTitle}}</span>
+                        <span class="text-muted" *ngIf="data && !data.subTitle">No Sub Title</span>
+                  </h3>
+                  <p>
+                        <span *ngIf="data && data.category"> <strong>{{data.category}}</strong> </span>
+                        <span class="text-muted" *ngIf="data && !data.category">No Category</span>
+                  </p>
+                  <div [innerHTML]="data.text">
+                  </div>
+                  <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span class="p-2" *ngIf="data && data.title"><strong>Title:</strong> {{data.title}}</span>
+                            <span class="p-2 text-secondary text-opacity-25 fst-italic" *ngIf="data && !data.title">No Title</span>
+                            <a class="text-secondary text-opacity-25" style="cursor: pointer;" (click)="onDocument()"><i class="fa fa-chevron-right fa-1x"></i></a>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span class="p-2" *ngIf="data && data.category"><strong>Category:</strong> {{data.category}}</span>
+                            <span class="p-2 text-secondary text-opacity-25 fst-italic" *ngIf="data && !data.category">No Category</span>
+                            <a class="text-secondary text-opacity-25" style="cursor: pointer;" (click)="onDocument()"><i class="fa fa-chevron-right fa-1x"></i></a>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span class="p-2" *ngIf="data && data.text"><strong>Text:</strong> {{data.text}}</span>
+                            <span class="p-2 text-secondary text-opacity-25 fst-italic" *ngIf="data && !data.text">No Text</span>
+                            <a class="text-secondary text-opacity-25" style="cursor: pointer;" (click)="onDocument()"><i class="fa fa-chevron-right fa-1x"></i></a>
+                      </li> -->
+                  <div class="text-center mt-2 mb-3">
+                        <button (click)="onDocument()" class="btn btn-primary">Edit</button>
+                  </div>
+                  <ul class="list-group mb-3"><i>Attachments:</i>
+                        
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+
+                              <div *ngIf="data && data.files && data.files[0]"><a href="{{data.files[0].url}}">{{data.files[0].name}}</a> </div>
+                              <!-- <img class="p-2 img-fluid" *ngIf="data && data.files && data.files[0]" src="{{data.files[0].url}}" alt="{{data.files[0].name}}" style="max-height: 128px;"> -->
+                              <span class="p-2 text-secondary text-opacity-25 fst-italic" *ngIf="!(data && data.files && data.files[0])">No attachments found</span>
+                              <a class="text-secondary text-opacity-25" style="cursor: pointer;" (click)="onAttacthemnt()"><i class="fa fa-chevron-right fa-1x"></i></a>
+                        </li>
+                  </ul>
+                  <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between align-items-center wow fadeIn">
+                              <span class="p-2">Diagnostic </span>
+                              <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [checked]="isDiagnostic" (click)="setDiagnostic()">
+                              </div>
+                        </li>
+                  </ul>
+            </div>
+      </div>
+</div>

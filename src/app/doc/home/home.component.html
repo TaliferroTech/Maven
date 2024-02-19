@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-md">
+        <span *ngIf="!isEditMode" (click)="back()" style="cursor: pointer;">
+            <i class="fa fa-chevron-left  fa-2x text-muted"></i>
+        </span>
+        <span *ngIf="isEditMode" (click)="list()" style="cursor: pointer">
+            <i class="fa fa-chevron-left  fa-2x text-muted"></i>
+        </span>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="breadcrumb_text">
+        <h2>Documents</h2>
+        <p>Create various documents here.</p>
+        <button type="button" class="btn btn-primary" (click)="onNew()">Create</button>
+    </div>
+</div>
+<div class="container-fluid">
+    <section class="typography_area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md">
+                    <div class="container-fluid">
+                        <div class="row  no-print">
+                            <div class="col-md" *ngIf="!isEditMode">
+                                <app-lis (id)="onView($event)"></app-lis>
+                            </div>
+                            <div class="col-md" *ngIf="data">
+                                <app-view [data]="data" [isDiagnostic]="isDiagnostic" (editItem)="onEdit($event)"></app-view>
+                            </div>
+                            <div class="col-md" *ngIf="isEditMode">
+                                <app-create [data]="data" *ngIf="isDocument" (done)="editReset()"></app-create>
+                                <app-attachments [data]="data" *ngIf="isAttachment" (done)="editReset()"></app-attachments>
+                                <pre *ngIf="isDiagnostic">
+                                        {{data | json}}
+                                    </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
