@@ -1,6 +1,7 @@
 {
   "hosting": {
-    "public": "dist",
+    "site": "maven-inc-pa",
+    "public": "dist/documentation",
     "ignore": [
       "firebase.json",
       "**/.*",

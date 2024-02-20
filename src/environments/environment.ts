@@ -5,15 +5,18 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyBBa2iIUnEFhKhVHT3wcepiVEl4BOfOOYA",
-    authDomain: "taliferro-de66f.firebaseapp.com",
-    databaseURL: "https://taliferro-de66f.firebaseio.com",
-    projectId: "taliferro-de66f",
-    storageBucket: "taliferro-de66f.appspot.com",
-    messagingSenderId: "353334442276",
-    appId: "1:353334442276:web:45b043204cc83aa7725bb1"
+    apiKey: "AIzaSyAC5LJoOG1hQWS-tHGbsizTnsNGSK7U1Ag",
+    authDomain: "maven-inc-pa.firebaseapp.com",
+    projectId: "maven-inc-pa",
+    storageBucket: "maven-inc-pa.appspot.com",
+    messagingSenderId: "823268638819",
+    appId: "1:823268638819:web:b35c1a71db5051a39b7856",
+    measurementId: "G-7MR812XN3Y"
   },
   FILE_PATH: "files",
+  summaryRedirect: 'http://localhost:4200/verify/email-check',
+  SETTINGS: "settings",
+  USERS: "users",
 
 };
 

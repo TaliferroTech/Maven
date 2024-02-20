@@ -1,6 +1,27 @@
-# Documentation
+# Maven, Inc. NLP Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
+## Overview
+
+The Maven, Inc. NLP project brings a groundbreaking approach to interacting with spreadsheets and databases. By integrating Natural Language Processing (NLP) with BigQuery and Angular, this project aims to simplify and naturalize user interactions with data. Our objective is to make querying databases as easy and intuitive as having a conversation.
+
+## Features
+
+- **NLP-Driven Queries**: Empower users to perform database queries using natural language, making complex data retrieval straightforward and intuitive.
+- **Angular Frontend**: A user-friendly interface built with Angular, designed for an optimal user experience in navigating and interacting with the application.
+- **BigQuery Integration**: Utilize the powerful data analytics capabilities of Google's BigQuery for efficient, scalable data processing.
+- **Exportable Results**: Offer users the flexibility to export query results for further use in other programs, enhancing workflow integration and data applicability.
+
+## Project Goals
+
+Our mission is to revolutionize the way users interact with databases and spreadsheets. By making data queries feel more natural and less intimidating, we aim to unlock new possibilities for data interaction and analysis, catering to both technical and non-technical users alike.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed
+- Angular CLI installed
+- Google Cloud account with BigQuery enabled
 
 ## Development server
 
@@ -26,4 +47,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-Check
