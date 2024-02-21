@@ -1,14 +1,5 @@
 @charset "UTF-8";
 /*----------------------------------------------------
-@File: Default Styles
-
-This file contains the styling for the actual template, this
-is the file you need to edit to change the look of the
-template.
----------------------------------------------------- */
-/*=====================================================================
-@Template Name: Docy
-@Version: 1.1.2
 
 @Default Styles
 
@@ -347,10 +338,10 @@ p kbd {
   border: 2px solid #332e32;
   font-weight: 500;
 }
-.section_title.title-img .action_btn:hover {
+/* .section_title.title-img .action_btn:hover {
   background: transparent;
   color: #332e32;
-}
+} */
 
 .h_title {
   font-size: 30px;
@@ -498,7 +489,7 @@ p kbd {
 }
 .action_btn:hover {
   box-shadow: none;
-  color: #fff;
+  /* color: #fff; */
 }
 
 .error_area .action_btn {
@@ -15096,9 +15087,10 @@ body.body_dark .documentation_area .blog_info .body_item .info_subtitle {
   padding: 9px 24px;
   box-shadow: none;
 }
-.login_form .thm_btn:hover {
+/* .login_form .thm_btn:hover {
+  color: #a5a9b4;
   box-shadow: 0 20px 30px 0 rgba(231, 231, 235, 0.24);
-}
+} */
 
 /*================ signup_area css ==============*/
 /*================ signin_left css ==============*/

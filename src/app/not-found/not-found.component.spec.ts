@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SignOutComponent } from './sign-out.component';
+import { NotFoundComponent } from './not-found.component';
 
-describe('SignOutComponent', () => {
-  let component: SignOutComponent;
-  let fixture: ComponentFixture<SignOutComponent>;
+describe('NotFoundComponent', () => {
+  let component: NotFoundComponent;
+  let fixture: ComponentFixture<NotFoundComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SignOutComponent ]
+      declarations: [ NotFoundComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SignOutComponent);
+    fixture = TestBed.createComponent(NotFoundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

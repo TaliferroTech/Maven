@@ -10,7 +10,7 @@ export const environment = {
     measurementId: "G-7MR812XN3Y"
   },
   FILE_PATH: "files",
-  summaryRedirect: 'https://maven-inc-pa.web.app/verify/email-check',
+  summaryRedirect: 'https://maven-inc-pa.web.app/email-check',
   SETTINGS: "settings",
   USERS: "users",
 

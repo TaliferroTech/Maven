@@ -8,12 +8,12 @@ import { AppComponent } from './app.component';
 
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
-import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

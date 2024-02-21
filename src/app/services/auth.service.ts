@@ -19,6 +19,8 @@ export class AuthService {
   public errorMessage = new Subject<string>();
   public emailSent: boolean = false;
 
+  public isFirebaseUser: boolean = false;
+
   private _actionCodeSettings = {
     url: environment.summaryRedirect,
     handleCodeInApp: true
@@ -33,8 +35,8 @@ export class AuthService {
     try {
       this._afAuth.onAuthStateChanged(firebaseUser => {
         this.firebaseUser = firebaseUser!;
-
-        if (!environment.production)
+        this.isFirebaseUser = (this.firebaseUser?.email) ? true : false; 
+ 
           console.log("Auth State Change", firebaseUser);
       });
     } catch (error) {
@@ -52,10 +54,9 @@ export class AuthService {
       firebase.auth().sendSignInLinkToEmail(emailAddress, this._actionCodeSettings)
         .then((result) => {
           window.localStorage.setItem('emailForSignIn', emailAddress);
-          if (!environment.production)
-            console.info("Email Sent", emailAddress, new Date().toLocaleTimeString());
-          else
-            console.info("Email Sent", new Date().toLocaleTimeString());
+
+          console.info("Email Sent", emailAddress, new Date().toLocaleTimeString(), this._actionCodeSettings);
+
           this.emailSent = true;
           resolve(result);
         })
@@ -72,12 +73,13 @@ export class AuthService {
     try {
       const withLink = await this._afAuth.isSignInWithEmailLink(url);
       if (withLink) {
-
+        console.log("confirmSignIn", withLink)
         const result = await this._afAuth.signInWithEmailLink((email) ? email : '', url);
 
         return (result && result.user && result.user.uid) ? 'true' : 'false';
 
-      } else return 'false'
+      } else 
+      return 'false';
     } catch (error) {
       console.error(error);
       this.errorMessage.next(String(error));

@@ -12,7 +12,13 @@
             <div class="sign_right signup_right">
                 <div class="sign_inner signup_inner" *ngIf="authService.firebaseUser">
                     <div class="text-center">
-                        <h3>You are signed in click the button to enter</h3>
+                        <h3>You are signed in click a button to enter</h3>
+                        <div class="mb5">
+                            <button (click)="onEnter()" class="btn action_btn thm_btn">Database</button>  &nbsp;                           
+                            <button (click)="onProjectSummary()" class="btn action_btn thm_btn">Project Summary</button>
+                            <br>
+                        </div>
+
                         <i>Bridging The Gap Between Leaders And Their Communities</i>
                     </div>    
                 </div>
