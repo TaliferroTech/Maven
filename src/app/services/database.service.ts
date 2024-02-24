@@ -4,6 +4,9 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 
+import { AngularFireFunctions } from '@angular/fire/compat/functions';
+
+
 interface DataItem {
   name: string,
 };
@@ -19,8 +22,8 @@ export class DatabaseService {
   private _itemDoc?: AngularFirestoreDocument<any>;
   public item?: Observable<any>;
 
-
-  constructor(private _firestore: AngularFirestore, private _authService: AuthService) { }
+  
+  constructor(private _firestore: AngularFirestore, private _authService: AuthService, private fns: AngularFireFunctions) { }
 
   getAll(collectionName: string) {
     this._itemDocs = this._firestore.collection(collectionName);
@@ -92,5 +95,15 @@ export class DatabaseService {
   getAllByNotThis(collectionName: string, fieldName: string, notThisValue: string) {
     this._itemDocs = this._firestore.collection(collectionName, ref => ref.where(fieldName, "!=", notThisValue));
     this.items = this._itemDocs.valueChanges({ idField: '_id' });
+  }
+
+  sendNLP(textToSend: string) {
+     let temp : Observable<any>;
+     const callable = this.fns.httpsCallable('mavensearch');
+    temp = callable({ name: 'textToSend' });
+
+    temp.subscribe(d => {
+      console.log("Function returns:", d)
+    })
   }
 }

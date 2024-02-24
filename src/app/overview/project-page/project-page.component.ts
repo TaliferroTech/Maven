@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-project-page',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        const element = document.querySelector(`#${fragment}`);
+        if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
   }
 
 }

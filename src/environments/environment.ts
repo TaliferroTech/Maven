@@ -14,7 +14,7 @@ export const environment = {
     measurementId: "G-7MR812XN3Y"
   },
   FILE_PATH: "files",
-  summaryRedirect: 'http://localhost:4200/verify/email-check',
+  summaryRedirect: 'http://localhost:4200/email-check',
   SETTINGS: "settings",
   USERS: "users",
 
