@@ -8,7 +8,9 @@ import { AppComponent } from './app.component';
 
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
+import {AngularFireFunctionsModule } from "@angular/fire/compat/functions";
 import { NotFoundComponent } from './not-found/not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     CoreModule,
     AngularFireModule.initializeApp(env.firebaseConfig),
     AngularFirestoreModule,
-
+    AngularFireFunctionsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,7 +15,7 @@
             <h1 style="color:whitesmoke">Maven, Inc.</h1>
             <h2 class="wow fadeInUp">Looking for Something in Particular?</h2>
             <p class="wow fadeInUp" data-wow-delay="0.2s">Search here to find specific data</p>
-            <form action="#" class="header_search_form">
+            <form #dataForm="ngForm" (ngSubmit)="onSubmit(); dataForm.reset();" class="header_search_form">
                 <div class="header_search_form_info">
                     <div class="form-group">
                         <div class="input-wrapper">
