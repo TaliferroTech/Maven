@@ -21,9 +21,9 @@
                         <div class="input-wrapper">
                             <i class="icon_search"></i>
                             <input type='search' id="searchbox" autocomplete="off" name="search"
-                                placeholder="Search Database" />
+                                placeholder="Search Database" [(ngModel)]="searchValue"/>
                             <select class="search-expand-types custom-select" name="post_type"
-                                id="search_post_type">
+                                id="search_post_type" >
                                 <option value="">All Fields </option>
                                 <option value="manual_faq">Bugs</option>
                                 <option value="product">Escalations</option>

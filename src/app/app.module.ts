@@ -24,6 +24,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AngularFireModule.initializeApp(env.firebaseConfig),
     AngularFirestoreModule,
     AngularFireFunctionsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
