@@ -24,6 +24,9 @@ export class DatabaseService {
   private _itemDoc?: AngularFirestoreDocument<any>;
   public item?: Observable<any>;
 
+  loading: any;
+
+
   constructor(
     private _firestore: AngularFirestore,
     private _authService: AuthService,
@@ -121,12 +124,26 @@ export class DatabaseService {
   }
 
   sendNLP(textToSend: string) {
-    let temp: Observable<any>;
-    const callable = this.fns.httpsCallable("mavensearch");
-    temp = callable({ text: textToSend });
 
-    temp.subscribe((d) => {
-      console.log('Function returns:', d);
-    });
+    try {
+      let temp: Observable<any>;
+      const callable = this.fns.httpsCallable("mavensearch");
+
+      console.log("Calling function with " + textToSend);
+
+      temp = callable({ text: textToSend });
+
+      setTimeout(() => { this.loading = "loading complete" }, 5000);
+
+      temp.subscribe((d) => {
+        console.log('Function returns:', d);
+        this.items = d;
+      });
+      } catch (error) {
+        console.log('We Got an Error', error);
+        this.loading = error ;
+    }
+
+
   }
 }

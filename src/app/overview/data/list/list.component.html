@@ -1,0 +1,48 @@
+<div class="card" *ngIf="databaseService.loading else spinner">
+    <div class="card-header">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-filter"></i></span>
+            </div>
+            <input [(ngModel)]="filteredData" type="text" class="form-control form-control-lg"
+                placeholder="Type to filter results">
+        </div>
+    </div>
+    <div class="sales-list p-5" id="orderList">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Name</th>
+                    <th>Company</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d of data; let i = index"
+                    (click)="onView(data)" style="cursor: pointer;">
+                    <td>{{d?.Email_Address}}</td>
+                    <td class="text-capitalize">{{d?.First_Name}} {{d?.Last_Name}}</td>
+                    <td>{{d?.Company}}</td>
+                    <td>{{d?.MEMBER_RATING}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<ng-template #spinner>
+    <div id="preloader">
+        <div id="ctn-preloader" class="ctn-preloader">
+            <div class="round_spinner">
+                <div class="spinner"></div>
+                <div class="text">
+                    <img src="assets/img/spinner_logo.png" alt="">
+                    <h4><span>Maven</span>inc</h4>
+                </div>
+            </div>
+            <h2 class="head">Hold Tight!</h2>
+            <p></p>
+        </div>
+    </div>
+</ng-template>

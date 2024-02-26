@@ -13,16 +13,16 @@
     <div class="container">
         <div class="doc_banner_content">
             <h1 style="color:whitesmoke">Maven, Inc.</h1>
-            <h2 class="wow fadeInUp">Looking for Something in Particular?</h2>
-            <p class="wow fadeInUp" data-wow-delay="0.2s">Search here to find specific data</p>
+            <!-- <h2 class="wow fadeInUp">Looking for Something in Particular?</h2> -->
+            <p class="wow fadeInUp" data-wow-delay="0.2s">Type Your Inquiry</p>
             <form #dataForm="ngForm" (ngSubmit)="onSubmit(); dataForm.reset();" class="header_search_form">
                 <div class="header_search_form_info">
                     <div class="form-group">
                         <div class="input-wrapper">
-                            <i class="icon_search"></i>
-                            <input type='search' id="searchbox" autocomplete="off" name="search"
-                                placeholder="Search Database" [(ngModel)]="searchValue"/>
-                            <select class="search-expand-types custom-select" name="post_type"
+                            <!-- <i class="icon_search"></i> -->
+                            <input id="searchbox" autocomplete="off" name="search"
+                                placeholder="What Can We Help You Find?" [(ngModel)]="searchValue"/>
+                            <!-- <select class="search-expand-types custom-select" name="post_type"
                                 id="search_post_type" >
                                 <option value="">All Fields </option>
                                 <option value="manual_faq">Bugs</option>
@@ -31,20 +31,20 @@
                                 <option value="manual_portfolio">Help</option>
                                 <option value="forum">Plans</option>
                                 <option value="manual_documentation">Use Cases</option>
-                            </select>
+                            </select> -->
                         </div>
-                        <button type="submit" class="header_form_submit">Search</button>
+                        <button type="submit" class="header_form_submit">Submit</button>
                     </div>
 
                 </div>
-                <div class="header_search_keyword">
+                <!-- <div class="header_search_keyword">
                     <span class="header-search-form__keywords-label">Suggested Search:</span>
                     <ul class="list-unstyled">
                         <li class="wow fadeInUp" data-wow-delay="0.2s"><a href="#">gap</a></li>
                         <li class="wow fadeInUp" data-wow-delay="0.3s"><a href="#">ty showers</a></li>
                         <li class="wow fadeInUp" data-wow-delay="0.4s"><a href="#">course</a></li>
                     </ul>
-                </div>
+                </div> -->
             </form>
         </div>
     </div>

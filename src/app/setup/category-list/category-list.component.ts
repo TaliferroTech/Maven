@@ -15,7 +15,7 @@ export class CategoryListComponent implements OnInit, OnDestroy {
   filteredData = '';
 
   constructor(public dataService: DataService) {
-    this.dataService.getAll('project-doc-categories');
+    // this.dataService.getAll('project-doc-categories');
   }
 
   ngOnInit(): void {

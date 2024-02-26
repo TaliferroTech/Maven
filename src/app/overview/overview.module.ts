@@ -4,13 +4,15 @@ import { OverviewRoutingModule } from './overview-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { ProjectPageComponent } from './project-page/project-page.component';
+import { ListComponent } from './data/list/list.component';
 
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    ProjectPageComponent
+    ProjectPageComponent,
+    ListComponent
   ],
   imports: [
     CommonModule,

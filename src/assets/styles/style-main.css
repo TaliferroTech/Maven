@@ -15567,7 +15567,7 @@ body.body_dark .documentation_area .blog_info .body_item .info_subtitle {
 .header_search_form .input-wrapper {
   position: relative;
   flex: 1;
-  max-width: 570px;
+  /* max-width: 570px; */
   margin-right: 10px;
 }
 .header_search_form .input-wrapper i {
@@ -15586,7 +15586,7 @@ body.body_dark .documentation_area .blog_info .body_item .info_subtitle {
   padding-left: 52px;
   width: 100%;
   border-radius: 45px;
-  padding-right: 155px;
+  padding-right: 52px;
 }
 .header_search_form .input-wrapper input.placeholder {
   color: #848996;

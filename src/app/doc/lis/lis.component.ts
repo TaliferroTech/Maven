@@ -13,7 +13,7 @@ export class LisComponent implements OnInit {
   public filteredData = '';
 
   constructor(public dataService: DocuService) { 
-    this.dataService.getAll();
+    // this.dataService.getAll();
   }
 
   ngOnInit(): void {

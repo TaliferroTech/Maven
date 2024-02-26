@@ -28,7 +28,7 @@ export class CatagorySelectionComponent implements OnInit, OnDestroy {
   private _data1Subscription?: Subscription;
 
   constructor(private _dataService: DataService) { 
-    this._dataService.getAll('project-documents')
+    // this._dataService.getAll('project-documents')
   }
 
   ngOnInit(): void {

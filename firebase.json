@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "maven-inc-pa",
-    "public": "dist/documentation",
+    "public": "dist/nlp-project",
     "ignore": [
       "firebase.json",
       "**/.*",

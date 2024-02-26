@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AngularFireFunctions } from '@angular/fire/compat/functions';
+import { Router } from '@angular/router';
 import { Observable, EMPTY } from 'rxjs';
 import { DatabaseService } from 'src/app/services/database.service';
 
@@ -11,7 +12,7 @@ import { DatabaseService } from 'src/app/services/database.service';
 export class DashboardSearchBarComponent implements OnInit, OnDestroy {
   searchValue: string = "";
 
-  constructor(public database: DatabaseService) {
+  constructor(public database: DatabaseService, private _router: Router) {
   }
 
   ngOnInit(): void {}
@@ -19,7 +20,9 @@ export class DashboardSearchBarComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {}
 
   onSubmit(): void {
-    this.database.sendNLP(this.searchValue)
+    this.database.sendNLP(this.searchValue);
+    this._router.navigate(['home', 'list']);
+    
   }
 }
 
